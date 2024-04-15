@@ -5,16 +5,6 @@
   font-style: normal;
 }
 
-.option {
-    border: solid white 2px;
-    border-radius: 0.5em;
-    width: 70%;
-    height: 2em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 :root {
     --pixel-bg: lightpink; /* Inner background color */
     --pixel-border: lightblue; /* Inner border color: */
@@ -86,7 +76,7 @@
 }
 
 section {
-    margin-top: 3em;
+    margin-top: 2em;
     width: 80%;
     text-align: center;
 }
@@ -113,17 +103,17 @@ body {
     font-family: "Pixelify Sans", sans-serif;
     cursor: url(Cute_Unicorn_Cursor.png), pointer;
     padding: 5%;
-    color: black;
-    font-size: 100%;
+    color: #6f1e5c;
+    font-size: 32px;
     background: url("spinning_logo.gif") no-repeat;
     background-size: cover;
     background-position: center;
 
 }
 
-/*a {
+a {
     cursor: url(Cute_Unicorn_Pointer.png), pointer;
-}*/
+}
 
 @keyframes text_spin {
     from { transform: scale(1, 1) }
