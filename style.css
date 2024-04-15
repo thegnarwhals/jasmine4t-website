@@ -86,7 +86,7 @@
 }
 
 section {
-    margin-top: 2em;
+    margin-top: 3em;
     width: 80%;
     text-align: center;
 }
@@ -112,17 +112,18 @@ body {
     align-items: center;
     font-family: "Pixelify Sans", sans-serif;
     cursor: url(Cute_Unicorn_Cursor.png), pointer;
-    padding: 10%;
-    font-size: 40;
+    padding: 5%;
+    color: black;
+    font-size: 100%;
     background: url("spinning_logo.gif") no-repeat;
     background-size: cover;
     background-position: center;
 
 }
 
-a {
+/*a {
     cursor: url(Cute_Unicorn_Pointer.png), pointer;
-}
+}*/
 
 @keyframes text_spin {
     from { transform: scale(1, 1) }
