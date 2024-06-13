@@ -11,6 +11,12 @@
     --pixel-border-2: white; /* Middle border color: */
     --pixel-border-3: var(--pixel-border); /* Outer border color */
     --pixel: .125rem; /* Pixel size */
+    --scale: 2;
+    --unscaled-window-w: 320px;
+    --unscaled-window-h: 240px;
+    --window-w: calc(var(--unscaled-window-w) * var(--scale));
+    --window-h: calc(var(--unscaled-window-h) * var(--scale));
+    --links-h: 80px;
 }
 
 .pixel-border {
@@ -75,9 +81,31 @@
         0 calc(var(--pixel) * 15) 0 calc(var(--pixel) * -6) var(--pixel-border-3);
 }
 
+.window {
+  /* TODO optimal scaling */
+  /*--opt-w-size: round(down, 100vw, 320px);
+  --opt-h-size: round(down, 100vh, 240px);
+  --opt-w-scale: calc(var(--opt-w-scale) / 320);
+  --opt-h-scale: calc(var(--opt-h-scale) / 240);
+  --scale: min(var(--opt-h-scale), var(--opt-w-scale));*/
+  height: calc(var(--window-h) + var(--links-h));
+  width: var(--window-w);
+  background: url("rough_blockout_menu_screen.jpeg") no-repeat;
+  background-size: calc(320px * var(--scale)) calc(240px * var(--scale));
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    width: var(--window-w);
+    height: var(--links-h);
+
+}
+
 section {
-    margin-top: 2em;
-    width: 80%;
+    margin: calc(5 * var(--pixel));
     text-align: center;
 }
 
@@ -95,6 +123,38 @@ h1 {
     transform: scale(1.1); 
 }
 
+.upcoming {
+    position: relative;
+    left: calc(2 * var(--scale) * 106px);
+    top: calc(2 * var(--scale) * -1px);
+    height: calc(2 * var(--scale) * 95px);
+    width: calc(2 * var(--scale) * 125px);
+    font-size: calc(2 * var(--scale) * 2px);
+    overflow-y: hidden;
+    clip-path: rect(calc(2 * var(--scale) * 44px) 100% 100% 0%);
+    margin-top: -15px;
+    zoom: 0.5;
+    transition: all .2s ease-in-out;
+}
+
+.upcoming:hover {
+    height: calc(2 * var(--scale) * 250px);
+    clip-path: rect(calc(2 * var(--scale) * 44px) 100% 100% 0%);
+    overflow-y: auto;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -102,12 +162,14 @@ body {
     align-items: center;
     font-family: "Pixelify Sans", sans-serif;
     cursor: url(Cute_Unicorn_Cursor.png), pointer;
-    padding: 5%;
     color: #6f1e5c;
     font-size: 24px;
-    background: url("rough_blockout_menu_screen.jpeg") no-repeat;
+    background-color: black;
+    margin: 0;
     background-size: cover;
     background-position: center;
+    height: 100vh;
+    width: 100vw;
 
 }
 
