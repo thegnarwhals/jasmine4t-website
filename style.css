@@ -93,7 +93,7 @@
   left: 0px;
   height: calc(var(--window-h) + var(--links-h));
   width: var(--window-w);
-  background: url("rough_blockout_menu_screen.jpeg") no-repeat;
+  background: url("rough_blockout_menu_screen.png") no-repeat;
   background-size: calc(320px * var(--scale)) calc(240px * var(--scale));
 }
 
@@ -133,11 +133,15 @@ h1 {
     height: calc(2 * var(--scale) * 95px);
     width: calc(2 * var(--scale) * 125px);
     font-size: calc(2 * var(--scale) * 2px);
-    overflow-y: hidden;
+    overflow-y: auto;
     clip-path: rect(calc(2 * var(--scale) * 44px) 100% 100% 0%);
     margin-top: -15px;
     zoom: 0.5;
     transition: all .2s ease-in-out;
+}
+
+iframe {
+    height: 900px!important;
 }
 
 .upcoming:hover {
