@@ -17,7 +17,7 @@
     /*scale set in js*/
     --window-w: calc(var(--unscaled-window-w) * var(--scale));
     --window-h: calc(var(--unscaled-window-h) * var(--scale));
-    --links-h: 80px;
+    --links-h: calc(var(--scale) * 40px);
 }
 
 .pixel-border {
@@ -123,20 +123,21 @@ h1 {
 
 .upcoming {
     position: relative;
-    left: calc(2 * var(--scale) * 106px);
-    top: calc(2 * var(--scale) * -1px);
-    height: calc(2 * var(--scale) * 95px);
-    width: calc(2 * var(--scale) * 125px);
-    font-size: calc(2 * var(--scale) * 2px);
+    left: calc(2 * var(--scale) * 112px);
+    top: calc(2 * var(--scale) * 7px + var(--links-h));
+    height: calc(2 * var(--scale) * 60px);
+    width: calc(2 * var(--scale) * 115px);
     overflow-y: auto;
-    clip-path: rect(calc(2 * var(--scale) * 44px) 100% 100% 0%);
-    margin-top: -15px;
+    margin-top: calc(var(--scale) * 10px);
+    margin-left: calc(var(--scale) * 7px);
     zoom: 0.5;
     transition: all .2s ease-in-out;
 }
 
 iframe {
     height: 900px!important;
+    font-size: calc(2 * var(--scale) * 2px) !important;
+
 }
 
 @keyframes pulse {
@@ -153,7 +154,7 @@ iframe {
     background: url("down arrow.png") no-repeat;
     position: relative;
     left: calc(var(--scale) * 161px);
-    top: calc(var(--scale) * 10px);
+    top: calc(var(--scale) * 30px);
     height: calc(var(--scale) * 10px);
     width: calc(var(--scale) * 10px);
     background-size: calc(10px * var(--scale)) calc(10px * var(--scale));
@@ -194,7 +195,7 @@ body {
     font-family: "Pixelify Sans", sans-serif;
     cursor: url(Cute_Unicorn_Cursor.png), pointer;
     color: magenta;
-    font-size: 24px;
+    font-size: calc(var(--scale) * 12px);
     background-color: black;
     margin: 0;
     background-size: cover;
