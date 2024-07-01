@@ -144,16 +144,14 @@ iframe {
     height: 900px!important;
 }
 
-/*.upcoming:hover {
-    height: calc(2 * var(--scale) * 250px);
-    clip-path: rect(calc(2 * var(--scale) * 44px) 100% 100% 0%);
-    overflow-y: auto;
-}*/
-
 @keyframes pulse {
   0%   {scale: 1.0;}
   100%  {scale: 1.5;}
 
+}
+
+.pulse {
+    animation: pulse 0.5s linear 0.5s infinite alternate;
 }
 
 .down-arrow {
@@ -164,7 +162,6 @@ iframe {
     height: calc(var(--scale) * 10px);
     width: calc(var(--scale) * 10px);
     background-size: calc(10px * var(--scale)) calc(10px * var(--scale));
-    animation: pulse 0.5s linear 0.5s infinite alternate;
 }
 
 .merch {
@@ -172,7 +169,7 @@ iframe {
     position: absolute;
     left: calc(var(--scale) * 161px);
     top: calc(var(--scale) * 147px);
-    height: calc(var(--scale) * 50px);
+    height: calc(var(--scale) * 28px);
     width: calc(var(--scale) * 142px);
     align-content: flex-start;
     justify-content: space-between;
@@ -189,14 +186,9 @@ iframe {
     justify-content: center;
 }
 
-.outoforder {
-    position: absolute;
-    left: calc(var(--scale) * 47px);
-    top: calc(var(--scale) * 80px);
-    height: calc(var(--scale) * 40px);
-    width: calc(var(--scale) * 40px);
-    background: url("outoforder.png") no-repeat;
-    background-size: calc(40px * var(--scale)) calc(40px * var(--scale));
+.image-link {
+    display: flex;
+    justify-content: center;
 }
 
 body {
