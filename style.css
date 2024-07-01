@@ -14,6 +14,7 @@
     --scale: 2;
     --unscaled-window-w: 320px;
     --unscaled-window-h: 240px;
+    /*scale set in js*/
     --window-w: calc(var(--unscaled-window-w) * var(--scale));
     --window-h: calc(var(--unscaled-window-h) * var(--scale));
     --links-h: 80px;
@@ -82,12 +83,6 @@
 }
 
 .window {
-  /* TODO optimal scaling */
-  /*--opt-w-size: round(down, 100vw, 320px);
-  --opt-h-size: round(down, 100vh, 240px);
-  --opt-w-scale: calc(var(--opt-w-scale) / 320);
-  --opt-h-scale: calc(var(--opt-h-scale) / 240);
-  --scale: min(var(--opt-h-scale), var(--opt-w-scale));*/
   position: relative;
   top: 0px;
   left: 0px;
