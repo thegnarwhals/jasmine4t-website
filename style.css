@@ -11,7 +11,6 @@
     --pixel-border-2: white; /* Middle border color: */
     --pixel-border-3: var(--pixel-border); /* Outer border color */
     --pixel: .125rem; /* Pixel size */
-    --scale: 2;
     --unscaled-window-w: 320px;
     --unscaled-window-h: 240px;
     /*scale set in js*/
@@ -123,21 +122,17 @@ h1 {
 
 .upcoming {
     position: relative;
-    left: calc(2 * var(--scale) * 112px);
-    top: calc(2 * var(--scale) * 7px + var(--links-h));
-    height: calc(2 * var(--scale) * 60px);
-    width: calc(2 * var(--scale) * 115px);
+    left: calc(var(--scale) * 73px);
+    top: calc(var(--scale) * 35px);
+    height: calc(var(--scale) * 57px);
+    width: calc(var(--scale) * 200px);
+    margin: 0px;
     overflow-y: auto;
-    margin-top: calc(var(--scale) * 10px);
-    margin-left: calc(var(--scale) * 7px);
-    zoom: 0.5;
-    transition: all .2s ease-in-out;
 }
 
 iframe {
-    height: 900px!important;
-    font-size: calc(2 * var(--scale) * 2px) !important;
-
+    scale: calc(80% * var(--scale));
+    margin-top: calc(-100px * var(--scale));
 }
 
 @keyframes pulse {
@@ -154,7 +149,7 @@ iframe {
     background: url("down arrow.png") no-repeat;
     position: relative;
     left: calc(var(--scale) * 161px);
-    top: calc(var(--scale) * 30px);
+    top: calc(var(--scale) * 36px);
     height: calc(var(--scale) * 10px);
     width: calc(var(--scale) * 10px);
     background-size: calc(10px * var(--scale)) calc(10px * var(--scale));
