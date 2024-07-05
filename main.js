@@ -14,7 +14,6 @@ opt_scale = Math.min(opt_scale_x, opt_scale_y);
 console.log("opt_scale: ", opt_scale)
 scale = Math.max(Math.min(opt_scale, max_scale), min_scale)
 console.log("scale: ", scale)
-scale = 4;
 root.style.setProperty('--scale', scale);
 
 
