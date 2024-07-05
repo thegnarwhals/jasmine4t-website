@@ -120,7 +120,8 @@ h1 {
     transform: scale(1.1); 
 }
 
-.upcoming {
+/*Handtuned variables for various scales*/
+.upcoming-scale-1 {
     position: relative;
     left: calc(var(--scale) * 73px);
     top: calc(var(--scale) * 35px);
@@ -130,9 +131,34 @@ h1 {
     overflow-y: auto;
 }
 
-iframe {
-    scale: calc(80% * var(--scale));
-    margin-top: calc(-100px * var(--scale));
+.upcoming-scale-2 {
+    position: relative;
+    left: calc(var(--scale) * 90px);
+    top: calc(var(--scale) * 35px);
+    height: calc(var(--scale) * 57px);
+    width: calc(var(--scale) * 165px);
+    margin: 0px;
+    overflow-y: auto;
+}
+
+.upcoming-scale-3 {
+    position: relative;
+    left: calc(var(--scale) * 96px);
+    top: calc(var(--scale) * 35px);
+    height: calc(var(--scale) * 57px);
+    width: calc(var(--scale) * 153px);
+    margin: 0px;
+    overflow-y: auto;
+}
+
+.upcoming-scale-4 {
+    position: relative;
+    left: calc(var(--scale) * 112px);
+    top: calc(var(--scale) * 35px);
+    height: calc(var(--scale) * 58px);
+    width: calc(var(--scale) * 125px);
+    margin: 0px;
+    overflow-y: auto;
 }
 
 @keyframes pulse {
