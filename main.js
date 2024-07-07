@@ -10,7 +10,7 @@ client_width = root.clientWidth;
 client_height = root.clientHeight;
 
 opt_scale_x = Math.floor(client_width / unscaled_window_w);
-opt_scale_y = Math.floor(client_height / (unscaled_window_h + links_height));
+opt_scale_y = Math.floor(client_height / (unscaled_window_h + 2 * links_height));
 opt_scale = Math.min(opt_scale_x, opt_scale_y);
 console.log("opt_scale: ", opt_scale)
 scale = Math.max(Math.min(opt_scale, max_scale), min_scale)
@@ -78,4 +78,25 @@ document.getElementsByClassName("down-arrow")[0].addEventListener("click",
         top:40,
         behavior: "smooth"
     })
-)
+);
+
+const merch = ["cap", "record", "shirt"]
+for (let i = 0; i < merch.length; i++) {
+    document.getElementById(merch[i]).addEventListener("mouseenter",
+        event => document.getElementById(merch[i] + "-text").style.display = "block"
+    );
+    document.getElementById(merch[i]).addEventListener("mouseleave",
+        event => document.getElementById(merch[i] + "-text").style.display = "none"
+    );
+}
+
+const out_of_stock = document.getElementsByClassName("pulse-contact-button")
+for (let i = 0; i < out_of_stock.length; i++) {
+    out_of_stock[i].addEventListener("mouseenter",
+        event => document.getElementById("contact-button").classList.add("pulse")
+    );
+    out_of_stock[i].addEventListener("mouseleave",
+        event => document.getElementById("contact-button").classList.remove("pulse")
+    );
+}
+

@@ -92,6 +92,44 @@
   image-rendering: pixelated;
 }
 
+#arcade-machine {
+    position: absolute;
+    z-index: 10;
+    top: calc(var(--scale) * 57px);
+    left: calc(var(--scale) * 43px);
+    width: calc(var(--scale) * 59px);
+    height: calc(var(--scale) * 163px);
+}
+
+.dialogue {
+    transition: all .2s ease-in-out; 
+    display: none;
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+}
+
+.bartender {
+    color: lightblue;
+}
+
+.goth {
+    color: pink;
+}
+
+@keyframes pop-up {
+    99% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+#arcade-machine:hover + #bartender-text {
+    display: block;
+}
+
 #upcoming-lights {
     display: none;
     position: absolute;
@@ -306,7 +344,7 @@
 /* Modal Content/Box */
 .modal-content {
   background-color: --pixel-bg;
-  margin: 15% auto; /* 15% from the top and centered */
+  margin: 5% auto; /* 15% from the top and centered */
   padding: 20px;
   width: 80%; /* Could be more or less, depending on screen size */
   animation-name: fade-in;
