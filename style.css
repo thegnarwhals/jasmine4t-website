@@ -87,9 +87,194 @@
   left: 0px;
   height: calc(var(--window-h) + var(--links-h));
   width: var(--window-w);
-  background: url("wip_menu_artwork.jpeg") no-repeat;
-  background-size: calc(320px * var(--scale)) calc(240px * var(--scale));
+  background: url("images/bar/01_bg/01_bg.png") no-repeat;
+  background-size: var(--window-w) var(--window-h);
+  image-rendering: pixelated;
 }
+
+#upcoming-lights {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--window-w);
+    height: var(--window-h);
+    z-index: 2;
+    background: url("images/bar/02_upcomingevents/02_upcomingevents_on2.png") no-repeat;
+    background-size: var(--window-w) var(--window-h);
+
+}
+
+#upcoming-lights img {
+    opacity: 0;
+    position: absolute;
+    width: var(--window-w);
+    height: var(--window-h);
+    animation-name: lights-flicker;
+    animation-iteration-count: infinite;
+    animation-duration: 8s;
+    animation-timing-function: step-start;
+}
+
+@keyframes lights-flicker {
+  0% {
+    opacity: 0;
+  }
+  1% {
+    opacity: 0;
+  }
+  2% {
+    opacity: 1;
+  }
+  3% {
+    opacity: 1;
+  }
+  4% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 0;
+  }
+  6% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#goth {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(var(--scale) * 50px);
+    height: calc(var(--scale) * 82px);
+    z-index: 3;
+}
+
+#goth img {
+    opacity: 0;
+    position: absolute;
+    top: calc(var(--scale) * 73px);
+    left: calc(var(--scale) * 212px);
+    width: calc(var(--scale) * 50px);
+    height: calc(var(--scale) * 82px);
+    animation-name: goth-rotator;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+    animation-timing-function: step-start;
+}
+
+@keyframes goth-rotator {
+  0% {
+    opacity: 1;
+  }
+  6.24% {
+    opacity: 1;
+  }
+  6.25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+#goth img:nth-of-type(1) {
+  animation-delay: 1.875s;
+}
+#goth img:nth-of-type(2) {
+  animation-delay: 1.75s;
+}
+#goth img:nth-of-type(3) {
+  animation-delay: 1.625s;
+}
+#goth img:nth-of-type(4) {
+  animation-delay: 1.5s;
+}
+#goth img:nth-of-type(5) {
+  animation-delay: 1.375s;
+}
+#goth img:nth-of-type(6) {
+  animation-delay: 1.25s;
+}
+#goth img:nth-of-type(7) {
+  animation-delay: 1.125s;
+}
+#goth img:nth-of-type(8) {
+  animation-delay: 1s;
+}
+#goth img:nth-of-type(9) {
+  animation-delay: 0.875s;
+}
+#goth img:nth-of-type(10) {
+  animation-delay: 0.75s;
+}
+#goth img:nth-of-type(11) {
+  animation-delay: 0.625s;
+}
+#goth img:nth-of-type(12) {
+  animation-delay: 0.5s;
+}
+#goth img:nth-of-type(13) {
+  animation-delay: 0.375s;
+}
+#goth img:nth-of-type(14) {
+  animation-delay: 0.25s;
+}
+#goth img:nth-of-type(15) {
+  animation-delay: 0.125s;
+}
+#goth img:nth-of-type(16) {
+  animation-delay: 0s;
+}
+
+#bar-game-table {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--window-w);
+    height: var(--window-h);
+    z-index: 4;
+    background: url("images/bar/04_bargametable/04_bargametable.png") no-repeat;
+    background-size: var(--window-w) var(--window-h);
+}
+
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--window-w);
+    height: var(--window-h);
+    z-index: 5;
+    background: url("images/bar/05_overlay/05_overlay.png") no-repeat;
+    background-size: var(--window-w) var(--window-h);
+    opacity: 0.5;
+}
+
+#overhead-lights {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--window-w);
+    height: calc(var(--scale) * 64px);
+    z-index: 6;
+    background: url("images/bar/06_overheadlights/06_overheadlights1.png") no-repeat;
+    background-size: var(--window-w) calc(var(--scale) * 64px);
+}
+
+#overhead-lights img {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--window-w);
+    height: calc(var(--scale) * 64px);
+    animation-name: lights-flicker;
+    animation-iteration-count: infinite;
+    animation-duration: 8s;
+    animation-timing-function: step-start;
+}
+
 
 .links {
     display: flex;
@@ -105,7 +290,7 @@
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  z-index: 100; /* Sit on top */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -159,7 +344,7 @@ section {
 h1 {
     font-family: "Pixelify Sans", sans-serif;
     color: pink;
-    animation: 2.5s infinite alternate text_spin;
+    animation: 2.5s infinite alternate ease-in-out text_spin;
 }
 
 .grow { 
@@ -170,9 +355,12 @@ h1 {
     transform: scale(1.1); 
 }
 
+#upcoming {
+    z-index: 10;
+}
 /*Handtuned variables for various scales*/
 .upcoming-scale-1 {
-    position: relative;
+    position: absolute;
     left: calc(var(--scale) * 73px);
     top: calc(var(--scale) * 35px);
     height: calc(var(--scale) * 57px);
@@ -182,7 +370,7 @@ h1 {
 }
 
 .upcoming-scale-2 {
-    position: relative;
+    position: absolute;
     left: calc(var(--scale) * 90px);
     top: calc(var(--scale) * 35px);
     height: calc(var(--scale) * 57px);
@@ -191,8 +379,12 @@ h1 {
     overflow-y: auto;
 }
 
+#upcoming:hover + #upcoming-lights {
+    top: 100;
+}
+
 .upcoming-scale-3 {
-    position: relative;
+    position: absolute;
     left: calc(var(--scale) * 96px);
     top: calc(var(--scale) * 35px);
     height: calc(var(--scale) * 57px);
@@ -202,7 +394,7 @@ h1 {
 }
 
 .upcoming-scale-4 {
-    position: relative;
+    position: absolute;
     left: calc(var(--scale) * 112px);
     top: calc(var(--scale) * 35px);
     height: calc(var(--scale) * 58px);
@@ -222,15 +414,16 @@ h1 {
 
 .down-arrow {
     background: url("down arrow.png") no-repeat;
-    position: relative;
+    position: absolute;
     left: calc(var(--scale) * 161px);
-    top: calc(var(--scale) * 36px);
+    top: calc(var(--scale) * 101px);
     height: calc(var(--scale) * 10px);
     width: calc(var(--scale) * 10px);
     background-size: calc(10px * var(--scale)) calc(10px * var(--scale));
 }
 
 .merch {
+    z-index: 10;
     display: flex;
     position: absolute;
     left: calc(var(--scale) * 161px);
