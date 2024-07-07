@@ -74,7 +74,7 @@ function setup_upcoming() {
 window.onload = setup_upcoming;
 
 document.getElementsByClassName("down-arrow")[0].addEventListener("click",
-    event => document.getElementsByClassName("upcoming")[0].scrollBy({
+    event => document.getElementById("upcoming").scrollBy({
         top:40,
         behavior: "smooth"
     })

@@ -93,6 +93,7 @@
 }
 
 #upcoming-lights {
+    display: none;
     position: absolute;
     top: 0;
     left: 0;
@@ -101,7 +102,7 @@
     z-index: 2;
     background: url("images/bar/02_upcomingevents/02_upcomingevents_on2.png") no-repeat;
     background-size: var(--window-w) var(--window-h);
-
+    transition: all .2s ease-in-out; 
 }
 
 #upcoming-lights img {
@@ -355,52 +356,39 @@ h1 {
     transform: scale(1.1); 
 }
 
-#upcoming {
+#upcoming{
+    position: absolute;
+    margin: 0px;
+    overflow-y: auto;
     z-index: 10;
-}
-/*Handtuned variables for various scales*/
-.upcoming-scale-1 {
-    position: absolute;
-    left: calc(var(--scale) * 73px);
+    transition: all .2s ease-in-out; 
     top: calc(var(--scale) * 35px);
     height: calc(var(--scale) * 57px);
-    width: calc(var(--scale) * 200px);
-    margin: 0px;
-    overflow-y: auto;
-}
-
-.upcoming-scale-2 {
-    position: absolute;
-    left: calc(var(--scale) * 90px);
-    top: calc(var(--scale) * 35px);
-    height: calc(var(--scale) * 57px);
-    width: calc(var(--scale) * 165px);
-    margin: 0px;
-    overflow-y: auto;
 }
 
 #upcoming:hover + #upcoming-lights {
-    top: 100;
+    display: block;
+}
+
+/*Handtuned variables for various scales*/
+.upcoming-scale-1 {
+    left: calc(var(--scale) * 73px);
+    width: calc(var(--scale) * 200px);
+}
+
+.upcoming-scale-2 {
+    left: calc(var(--scale) * 90px);
+    width: calc(var(--scale) * 165px);
 }
 
 .upcoming-scale-3 {
-    position: absolute;
     left: calc(var(--scale) * 96px);
-    top: calc(var(--scale) * 35px);
-    height: calc(var(--scale) * 57px);
     width: calc(var(--scale) * 153px);
-    margin: 0px;
-    overflow-y: auto;
 }
 
 .upcoming-scale-4 {
-    position: absolute;
     left: calc(var(--scale) * 112px);
-    top: calc(var(--scale) * 35px);
-    height: calc(var(--scale) * 58px);
     width: calc(var(--scale) * 125px);
-    margin: 0px;
-    overflow-y: auto;
 }
 
 @keyframes pulse {
@@ -420,6 +408,7 @@ h1 {
     height: calc(var(--scale) * 10px);
     width: calc(var(--scale) * 10px);
     background-size: calc(10px * var(--scale)) calc(10px * var(--scale));
+    z-index: 100;
 }
 
 .merch {
