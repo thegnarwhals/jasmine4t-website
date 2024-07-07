@@ -278,6 +278,8 @@
 
 
 .links {
+    position: relative;
+    z-index: 10;
     display: flex;
     flex-direction: row;
     justify-content: left;
@@ -408,7 +410,7 @@ h1 {
     height: calc(var(--scale) * 10px);
     width: calc(var(--scale) * 10px);
     background-size: calc(10px * var(--scale)) calc(10px * var(--scale));
-    z-index: 100;
+    z-index: 10;
 }
 
 .merch {

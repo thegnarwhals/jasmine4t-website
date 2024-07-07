@@ -40,7 +40,7 @@ if (ie)
 
 if (ie||n6){
     for (i = 0; i < n; i++)
-        document.write('<div id="dots'+i+'" style="position:absolute;top:0px;left:0px;width:'+i/2+'px;height:'+i/2+'px;background:#ff0000;font-size:'+i/2+'"></div>');
+        document.write('<div id="dots'+i+'" style="position:absolute;top:0px;left:0px;width:'+i/2+'px;height:'+i/2+'px;background:#ff0000;font-size:'+i/2+';z-index:10;"></div>');
 }
 
 if (ie)
@@ -160,7 +160,7 @@ function update_star(i) {
         tiny[i].style.height="2px";
         tiny[i].style.backgroundColor=star[i].childNodes[0].style.backgroundColor;
         star[i].style.visibility="hidden";
-        tiny[i].style.visibility="visible"
+        tiny[i].style.visibility="visible";
     }
 }
 
