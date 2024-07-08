@@ -113,26 +113,32 @@ function gaussianRandom(mean=0, stdev=1) {
 
 function dust() {
   let id = null;
-  const elem = document.getElementById("dust");
-  let x = 100;
-  let y = 100;
-  let u = 0;
-  let v = 0;
+  const elems = document.getElementsByClassName("dust");
+  let x = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  let y = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  let u = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  let v = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  for (let i = 0; i < 10; i++) {
+    x[i] = 297 * Math.random();
+    y[i] = 221 * Math.random();
+  }
   clearInterval(id);
   id = setInterval(frame, 50);
   function frame() {
-    if (x < 0 | x > 297 | y < 0 | y > 221) {
-      u = 0;
-      v = 0;
-      x = 100;
-      y = 100;
-    } else {
-      u += gaussianRandom(0, 0.01);
-      v += gaussianRandom(0, 0.01);
-      x += u;
-      y += v;
-      elem.style.left = scale * x + "px"; 
-      elem.style.top = scale * y + "px"; 
+    for (let i = 0; i < 10; i++) {
+        if (x[i] < 0 | x[i] > 297 | y[i] < 0 | y[i] > 221) {
+            u[i] = 0;
+            v[i] = 0;
+            x[i] = 297 * Math.random();
+            y[i] = 221 * Math.random();
+        } else {
+            u[i] += gaussianRandom(0, 0.01);
+            v[i] += gaussianRandom(0, 0.01);
+            x[i] += u[i];
+            y[i] += v[i];
+            elems[i].style.left = scale * x[i] + "px"; 
+            elems[i].style.top = scale * y[i] + "px"; 
+        }
     }
   }
 }
