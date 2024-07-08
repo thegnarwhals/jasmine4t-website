@@ -217,6 +217,24 @@
     height: calc(var(--scale) * 7px);
 }
 
+#dust {
+    position: absolute;
+    top: calc(100 * var(--scale));
+    left: calc(100 * var(--scale));
+    width: calc(23px * var(--scale));
+    height: calc(19px * var(--scale));
+    z-index: 4;
+}
+
+#dust img {
+    opacity: 0;
+    position: absolute;
+    top: calc(0px * var(--scale));
+    left: calc(0px * var(--scale));
+    width: calc(23px * var(--scale));
+    height: calc(19px * var(--scale));
+}
+
 .sixteen-frames img {
     animation-name: sixteen-frames-rotator;
     animation-iteration-count: infinite;

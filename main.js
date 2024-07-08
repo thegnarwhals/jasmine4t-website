@@ -62,16 +62,17 @@ songkick_scale_selector = {
 }
 
 
-function setup_upcoming() {
+function setup() {
     songkick_iframe = document.querySelector('[id^=songkick-widget-]');
     console.log("songkick_iframe_id: ", songkick_iframe.id);
     properties = songkick_scale_selector[scale]
     songkick_iframe.style.setProperty('scale', properties.iframe_scale_percentage + "%");
-    songkick_iframe.style.setProperty("margin-top", properties.iframe_margin_top + "px")
-    document.getElementById("upcoming").classList.add(properties.upcoming_class_name)
+    songkick_iframe.style.setProperty("margin-top", properties.iframe_margin_top + "px");
+    document.getElementById("upcoming").classList.add(properties.upcoming_class_name);
+    dust();
 }
 
-window.onload = setup_upcoming;
+window.onload = setup;
 
 document.getElementsByClassName("down-arrow")[0].addEventListener("click",
     event => document.getElementById("upcoming").scrollBy({
@@ -98,5 +99,41 @@ for (let i = 0; i < out_of_stock.length; i++) {
     out_of_stock[i].addEventListener("mouseleave",
         event => document.getElementById("contact-button").classList.remove("pulse")
     );
+}
+
+
+// Standard Normal variate using Box-Muller transform.
+function gaussianRandom(mean=0, stdev=1) {
+    const u = 1 - Math.random(); // Converting [0,1) to (0,1]
+    const v = Math.random();
+    const z = Math.sqrt( -2.0 * Math.log( u ) ) * Math.cos( 2.0 * Math.PI * v );
+    // Transform to the desired mean and standard deviation:
+    return z * stdev + mean;
+}
+
+function dust() {
+  let id = null;
+  const elem = document.getElementById("dust");
+  let x = 100;
+  let y = 100;
+  let u = 0;
+  let v = 0;
+  clearInterval(id);
+  id = setInterval(frame, 50);
+  function frame() {
+    if (x < 0 | x > 297 | y < 0 | y > 221) {
+      u = 0;
+      v = 0;
+      x = 100;
+      y = 100;
+    } else {
+      u += gaussianRandom(0, 0.01);
+      v += gaussianRandom(0, 0.01);
+      x += u;
+      y += v;
+      elem.style.left = scale * x + "px"; 
+      elem.style.top = scale * y + "px"; 
+    }
+  }
 }
 
