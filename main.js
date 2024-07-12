@@ -49,19 +49,21 @@ function create_modal(id) {
 create_modal("contact")
 create_modal("upcoming")
 
+
+
 function setup() {
     dust();
 }
 
 window.onload = setup;
 
-const merch = ["cap", "record", "shirt"]
-for (let i = 0; i < merch.length; i++) {
-    document.getElementById(merch[i]).addEventListener("mouseenter",
-        event => document.getElementById(merch[i] + "-text").style.display = "block"
+const text_triggers = ["cap", "record", "shirt", "insta", "tiktok", "woman-video", "contact-button"]
+for (let i = 0; i < text_triggers.length; i++) {
+    document.getElementById(text_triggers[i]).addEventListener("mouseenter",
+        event => document.getElementById(text_triggers[i] + "-text").style.display = "block"
     );
-    document.getElementById(merch[i]).addEventListener("mouseleave",
-        event => document.getElementById(merch[i] + "-text").style.display = "none"
+    document.getElementById(text_triggers[i]).addEventListener("mouseleave",
+        event => document.getElementById(text_triggers[i] + "-text").style.display = "none"
     );
 }
 

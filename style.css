@@ -363,7 +363,10 @@
     align-items: center;
     width: var(--window-w);
     height: var(--links-h);
+}
 
+#insta:hover + #insta-text {
+  display: block;
 }
 
 /* The Modal (background) */
