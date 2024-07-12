@@ -30,7 +30,7 @@ function create_modal(id) {
 
   // When the user clicks on the button, open the modal
   btn.onclick = function() {
-    modal.style.display = "block";
+    modal.style.display = "flex";
   }
 
   // When the user clicks on (x), close the modal
