@@ -18,68 +18,42 @@ console.log("scale: ", scale)
 root.style.setProperty('--scale', scale);
 
 
-// Get the modal
-var modal = document.getElementById("contact-page");
+function create_modal(id) {
+  // Get the modal
+  var modal = document.getElementById(id + "-page");
 
-// Get the button that opens the modal
-var btn = document.getElementById("contact-button");
+  // Get the button that opens the modal
+  var btn = document.getElementById(id + "-button");
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+  // Get the element that closes the modal
+  var close = document.getElementById(id + "-close");
 
-// When the user clicks on the button, open the modal
-btn.onclick = function() {
-  modal.style.display = "block";
-}
+  // When the user clicks on the button, open the modal
+  btn.onclick = function() {
+    modal.style.display = "block";
+  }
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
+  // When the user clicks on (x), close the modal
+  close.onclick = function() {
     modal.style.display = "none";
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
   }
 }
 
-class SongkickWidgetProperties {
-    constructor (iframe_scale_percentage, iframe_margin_top, upcoming_class_name) {
-        this.iframe_scale_percentage = iframe_scale_percentage;
-        this.iframe_margin_top = iframe_margin_top;  // Crop out songkick logo
-        this.upcoming_class_name = upcoming_class_name;
-    }
-}
-
-
-// Handtuned variables for various scales
-songkick_scale_selector = {
-    1: new SongkickWidgetProperties(80, -170, "upcoming-scale-1"),
-    2: new SongkickWidgetProperties(80, -146, "upcoming-scale-2"),
-    3: new SongkickWidgetProperties(80, -146, "upcoming-scale-3"),
-    4: new SongkickWidgetProperties(100, -91, "upcoming-scale-4"),
-}
-
+create_modal("contact")
+create_modal("upcoming")
 
 function setup() {
-    songkick_iframe = document.querySelector('[id^=songkick-widget-]');
-    console.log("songkick_iframe_id: ", songkick_iframe.id);
-    properties = songkick_scale_selector[scale]
-    songkick_iframe.style.setProperty('scale', properties.iframe_scale_percentage + "%");
-    songkick_iframe.style.setProperty("margin-top", properties.iframe_margin_top + "px");
-    document.getElementById("upcoming").classList.add(properties.upcoming_class_name);
     dust();
 }
 
 window.onload = setup;
-
-document.getElementsByClassName("down-arrow")[0].addEventListener("click",
-    event => document.getElementById("upcoming").scrollBy({
-        top:40,
-        behavior: "smooth"
-    })
-);
 
 const merch = ["cap", "record", "shirt"]
 for (let i = 0; i < merch.length; i++) {

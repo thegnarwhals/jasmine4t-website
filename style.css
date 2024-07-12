@@ -435,39 +435,37 @@ h1 {
     transform: scale(1.1); 
 }
 
-#upcoming{
+#upcoming {
     position: absolute;
     margin: 0px;
     overflow-y: auto;
     z-index: 10;
     transition: all .2s ease-in-out; 
     top: calc(var(--scale) * 35px);
+    left: calc(var(--scale) * 122px);
     height: calc(var(--scale) * 57px);
+    width: calc(var(--scale) * 102px);
+}
+
+#upcoming-table {
+    width: 100%;
+    font-size: calc(var(--scale) * 15px);
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
 }
 
 #upcoming:hover + #upcoming-lights {
     display: block;
 }
 
-/*Handtuned variables for various scales*/
-.upcoming-scale-1 {
-    left: calc(var(--scale) * 73px);
-    width: calc(var(--scale) * 200px);
-}
-
-.upcoming-scale-2 {
-    left: calc(var(--scale) * 90px);
-    width: calc(var(--scale) * 165px);
-}
-
-.upcoming-scale-3 {
-    left: calc(var(--scale) * 96px);
-    width: calc(var(--scale) * 153px);
-}
-
-.upcoming-scale-4 {
-    left: calc(var(--scale) * 112px);
-    width: calc(var(--scale) * 125px);
+#upcoming:hover + #upcoming-lights + #upcoming-text {
+  display: block;
 }
 
 @keyframes pulse {
@@ -477,17 +475,6 @@ h1 {
 
 .pulse {
     animation: pulse 0.5s linear 0.5s infinite alternate;
-}
-
-.down-arrow {
-    background: url("down arrow.png") no-repeat;
-    position: absolute;
-    left: calc(var(--scale) * 161px);
-    top: calc(var(--scale) * 101px);
-    height: calc(var(--scale) * 10px);
-    width: calc(var(--scale) * 10px);
-    background-size: calc(10px * var(--scale)) calc(10px * var(--scale));
-    z-index: 10;
 }
 
 .merch {

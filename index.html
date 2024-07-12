@@ -36,7 +36,7 @@
     </div>
     <div id="contact-page" class="modal">
         <div class="modal-content pixel-border">
-            <span class="close">&times;</span>
+            <span id="contact-close" class="close">&times;</span>
             <section class="pixel-border contact-item">
                 <p>Management: jen@takecaremgmt.co.uk</p>
             </section>
@@ -53,6 +53,12 @@
             </section>
         </div>
     </div>
+    <div id="upcoming-page" class="modal">
+        <div class="modal-content pixel-border">
+            <span id="upcoming-close" class="close">&times;</span>
+            <a href="https://www.songkick.com/artists/10294709" class="songkick-widget" data-theme="light" data-track-button="off" data-detect-style="on" data-locale="en" data-other-artists="on" data-share-button="off" data-country-filter="off" data-rsvp="off" data-request-show="off" data-past-events="off" data-past-events-offtour="off" data-remind-me="off" style="display: none;"></a><script src='https://widget-app.songkick.com/injector/10294709'></script>
+        </div>
+    </div>
     <div class="window">
         <p id="cap-text" class="dialogue goth">Goth: OMG angel we're out of caps :'(<br>Subscribe up top and I'll tell you when they're back...</p>
         <p id="record-text" class="dialogue goth">Goth: Eeeee that's Jasmine's debut EP right there!<br>♡(ꈍᴗꈍ)♡</p>
@@ -60,11 +66,21 @@
         <div id="arcade-machine"></div>
         <p id="bartender-text" class="dialogue bartender">Bartender: Sorry love, that thing's broken.<br>Jasmine's coming in to fix it soon.</p>
         <div id="upcoming">
-            <a href="https://www.songkick.com/artists/10294709" class="songkick-widget" data-theme="light" data-track-button="off" data-detect-style="on" data-locale="en" data-other-artists="on" data-share-button="off" data-country-filter="off" data-rsvp="off" data-request-show="off" data-past-events="off" data-past-events-offtour="off" data-remind-me="off" style="display: none;"></a><script src='https://widget-app.songkick.com/injector/10294709'></script>
+            <div id="upcoming-button">
+                <table id="upcoming-table">
+                    <tr>
+                        <td class="align-left">31 Jul</td><td class="align-right">London</td>
+                    </tr>
+                    <tr>
+                        <td class="align-left">8 Nov</td><td class="align-right">Paris</td>
+                    </tr>
+                </table>
+            </div>
         </div>
         <div id="upcoming-lights">
             <img src="images/bar/02_upcomingevents/02_upcomingevents_on2.png">
         </div>
+        <p id="upcoming-text" class="dialogue goth">Goth: Aaaa plsss come to a show (✿˵•́ ω •̀˵)<br>Click for tickets!</p>
         <div id="goth" class="sixteen-frames">
             <img src="images/bar/03_goth/03_goth_1.png">
             <img src="images/bar/03_goth/03_goth_2.png">
@@ -286,9 +302,6 @@
         <div id="overhead-lights">
             <img src="images/bar/06_overheadlights/06_overheadlights2.png">
         </div>
-
-        <section class="down-arrow pulse">
-        </section>
         <div class="merch">
             <div id="cap" class="merch-item grow pulse-contact-button">
                 <img src="coming_soon_cap.png" width=50%>
