@@ -461,6 +461,11 @@ h1 {
   text-align: right;
 }
 
+.align-centre {
+  text-align: center;
+  vertical-align: text-top;
+}
+
 #upcoming:hover + #upcoming-lights {
     display: block;
 }
