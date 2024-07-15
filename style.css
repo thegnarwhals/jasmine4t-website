@@ -92,6 +92,11 @@
   image-rendering: pixelated;
 }
 
+#listen-button {
+  color: lightblue;
+  text-decoration: underline;
+}
+
 #arcade-machine {
     position: absolute;
     z-index: 10;
@@ -383,6 +388,10 @@
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   justify-content: center;
   align-items: center;
+}
+
+.show-by-default {
+  display: flex;
 }
 
 /* Modal Content/Box */

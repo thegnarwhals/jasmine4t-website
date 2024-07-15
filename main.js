@@ -18,7 +18,7 @@ console.log("scale: ", scale)
 root.style.setProperty('--scale', scale);
 
 
-function create_modal(id, on_load=false) {
+function create_modal(id) {
   // Get the modal
   var modal = document.getElementById(id + "-page");
 
@@ -44,17 +44,11 @@ function create_modal(id, on_load=false) {
       modal.style.display = "none";
     };}
   );
-
-  if (on_load) {
-    window.addEventListener("load",
-      event => modal.style.display = "flex"
-    );
-  }
 }
 
 create_modal("contact")
 create_modal("upcoming")
-create_modal("listen", true)
+create_modal("listen")
 
 
 function setup() {
