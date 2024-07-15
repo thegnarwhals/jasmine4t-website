@@ -18,7 +18,7 @@ console.log("scale: ", scale)
 root.style.setProperty('--scale', scale);
 
 
-function create_modal(id) {
+function create_modal(id, on_load=false) {
   // Get the modal
   var modal = document.getElementById(id + "-page");
 
@@ -29,26 +29,32 @@ function create_modal(id) {
   var close = document.getElementById(id + "-close");
 
   // When the user clicks on the button, open the modal
-  btn.onclick = function() {
-    modal.style.display = "flex";
-  }
+  btn.addEventListener("click",
+    event => modal.style.display = "flex"
+  );
 
   // When the user clicks on (x), close the modal
-  close.onclick = function() {
-    modal.style.display = "none";
-  }
+  close.addEventListener("click",
+    event => modal.style.display = "none"
+  );
 
   // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function(event) {
-    if (event.target == modal) {
+  window.addEventListener("click",
+    function(){if (event.target == modal) {
       modal.style.display = "none";
-    }
+    };}
+  );
+
+  if (on_load) {
+    window.addEventListener("load",
+      event => modal.style.display = "flex"
+    );
   }
 }
 
 create_modal("contact")
 create_modal("upcoming")
-
+create_modal("listen", true)
 
 
 function setup() {
