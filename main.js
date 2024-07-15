@@ -57,7 +57,7 @@ function setup() {
 
 window.onload = setup;
 
-const text_triggers = ["cap", "record", "shirt", "insta", "tiktok", "woman-video", "contact-button"]
+const text_triggers = ["cap", "record", "shirt", "insta", "tiktok", "woman-video", "contact-button", "listen-button"]
 for (let i = 0; i < text_triggers.length; i++) {
     document.getElementById(text_triggers[i]).addEventListener("mouseenter",
         event => document.getElementById(text_triggers[i] + "-text").style.display = "block"
