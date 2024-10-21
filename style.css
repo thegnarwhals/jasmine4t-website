@@ -92,10 +92,12 @@
   image-rendering: pixelated;
 }
 
-#listen-button {
+.button {
   color: lightblue;
   text-decoration: underline;
   z-index: 10;
+  height: 5%;
+  cursor: url(images/icons/Cute_Unicorn_Pointer.png), pointer;
 }
 
 #arcade-machine {
@@ -519,6 +521,15 @@ h1 {
     justify-content: center;
 }
 
+#mug {
+    z-index: 10;
+    position: absolute;
+    left: calc(var(--scale) * 15px);
+    top: calc(var(--scale) * 140px);
+    height: calc(var(--scale) * 28px);
+    width: calc(var(--scale) * 28px);
+}
+
 #listen-iframe {
   width: 100%;
   height: 70%;
@@ -535,7 +546,7 @@ body {
     justify-content: center;
     align-items: center;
     font-family: "Pixelify Sans", sans-serif;
-    cursor: url(Cute_Unicorn_Cursor.png), pointer;
+    cursor: url(images/icons/Cute_Unicorn_Cursor.png), pointer;
     color: magenta;
     font-size: calc(var(--scale) * 12px);
     background-color: black;
@@ -548,7 +559,7 @@ body {
 }
 
 a {
-    cursor: url(Cute_Unicorn_Pointer.png), pointer;
+    cursor: url(images/icons/Cute_Unicorn_Pointer.png), pointer;
 }
 
 @keyframes text_spin {

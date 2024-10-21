@@ -49,6 +49,7 @@ function create_modal(id) {
 create_modal("contact")
 create_modal("upcoming")
 create_modal("listen")
+create_modal("presave")
 
 
 function setup() {
@@ -57,7 +58,7 @@ function setup() {
 
 window.onload = setup;
 
-const text_triggers = ["cap", "record", "shirt", "insta", "tiktok", "woman-video", "contact-button", "listen-button"]
+const text_triggers = ["cap", "record", "shirt", "mug", "insta", "tiktok", "woman-video", "contact-button", "listen-button", "presave-button"]
 for (let i = 0; i < text_triggers.length; i++) {
     document.getElementById(text_triggers[i]).addEventListener("mouseenter",
         event => document.getElementById(text_triggers[i] + "-text").style.display = "block"

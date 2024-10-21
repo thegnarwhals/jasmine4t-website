@@ -3,13 +3,13 @@
     <title>jasmine.4.t</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta property="og:title" content="jasmine.4.t" />
-    <meta property="og:description" content="'Skin on Skin' out now xxx all cops are bastards! free palestine!" />
+    <meta property="og:description" content="'Elephant' out now xxx all cops are bastards! free palestine!" />
     <meta property="og:type" content="profile" />
     <meta property="og:url" content="https://jasmine4t.com/" />
-    <meta property="og:image" content="https://www.jasmine4t.com/apple-touch-icon.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <meta property="og:image" content="https://www.jasmine4t.com/images/icons/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,8 +19,11 @@
 </head>
 <body>
     <script type="text/javascript" src="sparkles.js"></script>
-    <div id="listen-button">
-        <section class="grow"><p>"Skin on Skin" out now! Listen here</p></section>
+    <div id="presave-button" class="button">
+        <section class="grow"><p>"You Are The Morning" album out January 17th! Pre-save here</p></section>
+    </div>
+    <div id="listen-button" class="button">
+        <section class="grow"><p>"Elephant" out now! Listen here</p></section>
     </div>
     <div class="links">
         <section id="insta" class="pixel-border grow">
@@ -37,11 +40,16 @@
         </section>
         <h1>jasmine.4.t</h1>
     </div>
-    <div id="listen-page" class="modal show-by-default">
+    <div id="presave-page" class="modal show-by-default">
+        <div class="modal-content pixel-border">
+            <span id="presave-close" class="close">&times;</span>
+            <iframe id="presave-iframe" data-lnk-widget src="https://jasmine4t.lnk.to/you-are-the-morning/" width="100%" height="70%" frameborder="0" allowtransparency="true" scrolling="auto" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div id="listen-page" class="modal">
         <div class="modal-content pixel-border">
             <span id="listen-close" class="close">&times;</span>
-            <h1>jasmine.4.t<br>"Skin on Skin"</h1>
-            <iframe id="listen-iframe" data-lnk-widget src="https://jasmine4t.lnk.to/skin-on-skin/widget?view=clickthrough" width="100%" height="70%" frameborder="0" allowtranspaarency="true" scrolling="auto" allowfullscreen></iframe>
+            <iframe id="listen-iframe" data-lnk-widget src="https://jasmine4t.lnk.to/elephant/" width="100%" height="70%" frameborder="0" allowtransparency="true" scrolling="auto" allowfullscreen></iframe>
         </div>
     </div>
     <div id="contact-page" class="modal">
@@ -74,23 +82,25 @@
         <p id="tiktok-text" class="dialogue goth">Goth: Demos (musical, makeup and protest types)<br>(*^ ‿ ⁢*)♡</p>
         <p id="woman-video-text" class="dialogue goth">Goth: The 'Woman' video - where it all started! (*^ ‿ ⁢*)♡</p>
         <p id="contact-button-text" class="dialogue goth">Goth: Subscribe and get in touch (*^ ‿ ⁢*)♡</p>
-        <p id="listen-button-text" class="dialogue goth">Goth: OMG you HAVE to listen to this new track!!!<br>(*^ ‿ ⁢*)♡</p>
-        <p id="cap-text" class="dialogue goth">Goth: OMG angel we're out of caps :'(<br>Subscribe up top and I'll tell you when they're back...</p>
-        <p id="record-text" class="dialogue goth">Goth: Eeeee that's Jasmine's debut EP right there!<br>♡(ꈍᴗꈍ)♡</p>
-        <p id="shirt-text" class="dialogue goth">Goth: Noooo hunnyyy I'm so sorry we're out of shirts!<br>Subscribe up top and I'll tell you when they're back...</p>
+        <p id="presave-button-text" class="dialogue goth">Goth: Eeeee pls presave the album!!!<br>(*^ ‿ ⁢*)♡</p>
+        <p id="listen-button-text" class="dialogue goth">Goth: Aaaa you gotta hear this new track!!!<br>(*^ ‿ ⁢*)♡</p>
+        <p id="cap-text" class="dialogue goth">Goth: The caps are cuute right?!<br>♡(ꈍᴗꈍ)♡</p>
+        <p id="record-text" class="dialogue goth">Goth: Eeeee that's Jasmine's vinyl! Prettyyy<br>♡(ꈍᴗꈍ)♡</p>
+        <p id="shirt-text" class="dialogue goth">Goth: OMG you'd look sooo good in that<br>♡(ꈍᴗꈍ)♡</p>
+        <p id="mug-text" class="dialogue bartender">Bartender: Uhhh... that's not mine.<br>Leave it.</p>
         <div id="arcade-machine"></div>
         <p id="bartender-text" class="dialogue bartender">Bartender: Sorry love, that thing's broken.<br>Jasmine's coming in to fix it soon.</p>
         <div id="upcoming">
             <div id="upcoming-button">
                 <table id="upcoming-table">
                     <tr>
-                        <td class="align-left">11 Sep</td><td class="align-right">London</td>
+                        <td class="align-left">1 Nov</td><td class="align-right">Glasgow</td>
                     </tr>
                     <tr>
-                        <td class="align-left">28 Sep</td><td class="align-right">Leicester</td>
+                        <td class="align-left">8 Nov</td><td class="align-right">Paris</td>
                     </tr>
                     <tr>
-                        <td class="align-left">5 Oct</td><td class="align-right">Manchester</td>
+                        <td class="align-left">16 Nov</td><td class="align-right">Leeds</td>
                     </tr>
                     <tr><td class="align-centre" colspan="2">(More...)</td></tr>
                 </table>
@@ -322,17 +332,21 @@
             <img src="images/bar/06_overheadlights/06_overheadlights2.png">
         </div>
         <div class="merch">
-            <div id="cap" class="merch-item grow pulse-contact-button">
-                <img src="coming_soon_cap.png" width=50%>
+            <div id="cap" class="merch-item grow pulse">
+                <a class="image-link" href="https://jasmine.4.t.terrible.group/" target="_blank"><img src="images/merch/cap_pixel_art.png" width=50%></a
+>
             </div>
 
             <div id="record" class="merch-item grow pulse">
-                <a class="image-link" href="https://breakfastrecords.co.uk/product/jasmine-worn-through-12-vinyl-pre-order"><img src="record.png" width=50%></a>
+                <a class="image-link" href="https://jasmine.4.t.terrible.group/" target="_blank"><img src="images/merch/vinyl_pixel_art.png" width=50%></a>
             </div>
 
-            <div id="shirt" class="merch-item grow pulse-contact-button">
-                <img src="coming_soon_shirt.png" width=50%>
+            <div id="shirt" class="merch-item grow pulse">
+                <a class="image-link" href="https://jasmine.4.t.terrible.group/" target="_blank"><img src="images/merch/tee_pixel_art.png" width=50%></a>
             </div>
+        </div>
+        <div id="mug" class="grow">
+            <a class="image-link" href="https://jasmine.4.t.terrible.group/products/jasmine-4-t-mug" target="_blank"><img src="images/merch/mug_pixel_art.png" width=50%></a>
         </div>
     </div>
 
