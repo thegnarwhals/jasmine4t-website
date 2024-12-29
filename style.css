@@ -400,7 +400,9 @@
 .modal-content {
   background-color: var(--pixel-bg);
   padding: calc(20px * var(--scale));
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 80%;
+  height: 80%;
+  overflow: auto;
   animation-name: fade-in;
   animation-duration: 0.4s
 }
@@ -525,7 +527,9 @@ h1 {
     z-index: 10;
     position: absolute;
     left: calc(var(--scale) * 15px);
-    top: calc(var(--scale) * 140px);
+    top: calc(var(--scale) * 14
+
+      0px);
     height: calc(var(--scale) * 28px);
     width: calc(var(--scale) * 28px);
 }
