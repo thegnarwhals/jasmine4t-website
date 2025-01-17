@@ -48,7 +48,6 @@ function create_modal(id) {
 
 create_modal("contact")
 create_modal("upcoming")
-create_modal("listen")
 create_modal("presave")
 
 
