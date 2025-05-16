@@ -527,9 +527,7 @@ h1 {
     z-index: 10;
     position: absolute;
     left: calc(var(--scale) * 15px);
-    top: calc(var(--scale) * 14
-
-      0px);
+    top: calc(var(--scale) * 140px);
     height: calc(var(--scale) * 28px);
     width: calc(var(--scale) * 28px);
 }
