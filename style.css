@@ -467,7 +467,7 @@ h1 {
 
 #upcoming-table {
     width: 100%;
-    font-size: calc(var(--scale) * 9px);
+    font-size: calc(var(--scale) * 8px);
 }
 
 .align-left {

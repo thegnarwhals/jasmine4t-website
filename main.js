@@ -9,16 +9,45 @@ const max_scale = 4;  // maximum scale - very large monitors won't get more scal
 client_width = root.clientWidth;
 client_height = root.clientHeight;
 
+// songkick api url
+const songkick_api_url = "https://api.songkick.com/api/3.0/artists/10294709/calendar.json?apikey=7hs7vOnhl6UjvHGX";
+
 opt_scale_x = Math.floor(client_width / unscaled_window_w);
 opt_scale_y = Math.floor(client_height / (unscaled_window_h + 2 * links_height));
 opt_scale = Math.min(opt_scale_x, opt_scale_y);
-console.log("opt_scale: ", opt_scale)
-scale = Math.max(Math.min(opt_scale, max_scale), min_scale)
-console.log("scale: ", scale)
+console.log("opt_scale: ", opt_scale);
+scale = Math.max(Math.min(opt_scale, max_scale), min_scale);
+console.log("scale: ", scale);
 root.style.setProperty('--scale', scale);
 
 
-function create_modal(id) {
+async function fetchAsync (url) {
+  let response = await fetch(url);
+  let data = await response.json();
+  return data;
+}
+
+
+async function createUpcomingTable() {
+  let response = await fetchAsync(songkick_api_url);
+  console.log("response: ", response);
+  const events = response.resultsPage.results.event;
+  console.log("events: ", events);
+  var table = ""
+  for (const event of events){
+    const start_date = new Date(event.start.date);
+    const date_short = start_date.toLocaleString('default', {day: "numeric", month: 'short'});
+    const city = event.location.city.split(",")[0];
+    table += '<tr>\n                        <td class="align-left">' + date_short + '</td><td class="align-right">' + city + '</td>\n                    </tr>';
+  }
+  table += '<tr><td class="align-centre" colspan="2">(More...)</td></tr>';
+  console.log(table)
+  var table_element = document.getElementById("upcoming-table")
+  table_element.innerHTML = table;
+}
+
+
+function createModal(id) {
   // Get the modal
   var modal = document.getElementById(id + "-page");
 
@@ -46,18 +75,19 @@ function create_modal(id) {
   );
 }
 
-create_modal("contact")
-create_modal("upcoming")
-create_modal("presave")
+createModal("contact")
+createModal("upcoming")
+createModal("presave")
 
 
-function setup() {
+async function setup() {
+    createUpcomingTable();
     dust();
 }
 
 window.onload = setup;
 
-const text_triggers = ["cap", "record", "shirt", "mug", "insta", "tiktok", "woman-video", "contact-button", "listen-button", "presave-button"]
+const text_triggers = ["cap", "record", "shirt", "mug", "insta", "tiktok", "woman-video", "contact-button", "presave-button"]
 for (let i = 0; i < text_triggers.length; i++) {
     document.getElementById(text_triggers[i]).addEventListener("mouseenter",
         event => document.getElementById(text_triggers[i] + "-text").style.display = "block"
