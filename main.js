@@ -28,6 +28,12 @@ async function fetchAsync (url) {
 }
 
 
+const place_name_abbreviations = {
+  "Brecon Beacons": "Brecons",
+  "Sixpenny Handley": "Larmer Tree",
+  "Los Angeles (LA)": "LA",
+}
+
 async function createUpcomingTable() {
   let response = await fetchAsync(songkick_api_url);
   console.log("response: ", response);
@@ -37,7 +43,10 @@ async function createUpcomingTable() {
   for (const event of events){
     const start_date = new Date(event.start.date);
     const date_short = start_date.toLocaleString('default', {day: "numeric", month: 'short'});
-    const city = event.location.city.split(",")[0];
+    var city = event.location.city.split(",")[0];
+    if (city in place_name_abbreviations){
+      city = place_name_abbreviations[city];
+    }
     table += '<tr>\n                        <td class="align-left">' + date_short + '</td><td class="align-right">' + city + '</td>\n                    </tr>';
   }
   table += '<tr><td class="align-centre" colspan="2">(More...)</td></tr>';
