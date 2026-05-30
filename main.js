@@ -32,6 +32,7 @@ const place_name_abbreviations = {
   "Brecon Beacons": "Brecons",
   "Sixpenny Handley": "Larmer Tree",
   "Los Angeles (LA)": "LA",
+  "Newcastle Upon Tyne": "Newcastle",
 }
 
 async function createUpcomingTable() {
